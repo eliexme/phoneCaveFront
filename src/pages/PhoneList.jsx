@@ -21,16 +21,15 @@ export default function PhoneList() {
         axiosData()
     }, [])
 
-    useEffect(()=>{
-        console.log(allData)
-    },[allData])
-
   return (
-    <div>
+    <div className='grid'>
         {allData ? (
             allData.map((eachPhone)=>( 
                 <Link to={`/${eachPhone.id}`} key={eachPhone.id}>
-                    <h2>{eachPhone.name}</h2>
+                    <div>
+                        <img src={`/public/images/${eachPhone.imageFileName}`}/>
+                        <h2>{eachPhone.name}</h2>
+                    </div>
                 </Link>
             ))
 

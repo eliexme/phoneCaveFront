@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 export default function PhoneDets() {
@@ -22,11 +22,9 @@ export default function PhoneDets() {
         axiosData()
     }, [])
 
-    useEffect(()=>{
-        console.log(oneData)
-    },[oneData])
   return (
     <div>
+    <Link to={'/'}>Home page</Link>
         {oneData ? (
             <>
                 <h1>{oneData[0].name}</h1>
@@ -37,7 +35,7 @@ export default function PhoneDets() {
                 <p>Processor: {oneData[0].processor}</p>
                 <p>Ram: {oneData[0].ram}</p>
                 <p>Screen: {oneData[0].screen}</p>
-                <img src={oneData[0].imageFileName}/>
+                <img src={`/public/images/${oneData[0].imageFileName}`}/>
             </>
             
             ) 
