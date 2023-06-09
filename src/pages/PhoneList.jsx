@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios, { all } from 'axios'
+import { Link } from 'react-router-dom'
 
 export default function PhoneList() {
     const [allData, setAllData] = useState()
@@ -27,9 +28,11 @@ export default function PhoneList() {
   return (
     <div>
         {allData ? (
-            allData.map((eachPhone)=>{
-                return <h2>{eachPhone.name}</h2>
-            })
+            allData.map((eachPhone)=>( 
+                <Link to={`/${eachPhone.id}`} key={eachPhone.id}>
+                    <h2>{eachPhone.name}</h2>
+                </Link>
+            ))
 
             ) 
         
