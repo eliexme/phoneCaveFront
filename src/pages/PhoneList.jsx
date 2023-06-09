@@ -33,7 +33,7 @@ export default function PhoneList() {
 
             ) 
         
-        : (<p>Loading</p>)}
+        : (<p>Loading!</p>)}
     </div>
   )
 }
